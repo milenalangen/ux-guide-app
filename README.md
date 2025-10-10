@@ -1,6 +1,6 @@
 # ux-guide-app
 
-This is a code bundle for ux-guide-app. The original project is available at https://www.figma.com/design/nmmrvbCast6xKEw20GBDvk/UX-Design-Productivity-App.
+The project id deployed with Netlify and available on https://ux-guide-app.netlify.app/null 
 
 ## Running the code
 
