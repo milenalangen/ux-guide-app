@@ -1,7 +1,6 @@
 # ux-guide-app
 
-The project id deployed with Netlify and available on https://ux-guide-app.netlify.app/null 
-
+The project id deployed with Netlify and available on https://ux-guide-app.netlify.app/ 
 ## Running the code
 
 Run `npm i` to install the dependencies.
