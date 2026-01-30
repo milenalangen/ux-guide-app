@@ -161,8 +161,8 @@ export function ProjectSetup({ onProjectCreated }: ProjectSetupProps) {
           <RadioGroup value={selectedFramework} onValueChange={setSelectedFramework}>
             <div className="space-y-4">
               {frameworks.map((framework) => (
-                <Card key={framework.id} className={`p-4 cursor-pointer transition-colors ${
-                  selectedFramework === framework.id ? 'border-primary bg-primary/5' : ''
+                <Card key={framework.id} className={`p-4 cursor-pointer transition-all hover:border-primary/50 ${
+                  selectedFramework === framework.id ? 'border-primary bg-primary/5 border-2' : ''
                 }`}>
                   <div className="flex items-start space-x-3">
                     <RadioGroupItem value={framework.id} id={framework.id} className="mt-1" />
@@ -211,8 +211,8 @@ export function ProjectSetup({ onProjectCreated }: ProjectSetupProps) {
           <RadioGroup value={selectedProjectType} onValueChange={setSelectedProjectType}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {projectTypes.map((type) => (
-                <Card key={type.id} className={`p-4 cursor-pointer transition-colors ${
-                  selectedProjectType === type.id ? 'border-primary bg-primary/5' : ''
+                <Card key={type.id} className={`p-4 cursor-pointer transition-all hover:border-primary/50 ${
+                  selectedProjectType === type.id ? 'border-primary bg-primary/5 border-2' : ''
                 }`}>
                   <div className="flex items-start space-x-3">
                     <RadioGroupItem value={type.id} id={type.id} className="mt-1" />

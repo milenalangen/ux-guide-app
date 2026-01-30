@@ -16,7 +16,7 @@ const resources = {
       description: 'Design and prototyping tool',
       category: 'Design',
       type: 'Tool',
-      url: '#',
+      url: 'https://www.figma.com',
       icon: '🎨'
     },
     {
@@ -24,7 +24,7 @@ const resources = {
       description: 'Collaborative whiteboard for workshops',
       category: 'Collaboration',
       type: 'Tool',
-      url: '#',
+      url: 'https://miro.com',
       icon: '📋'
     },
     {
@@ -32,7 +32,7 @@ const resources = {
       description: 'Documentation and project management',
       category: 'Documentation',
       type: 'Tool',
-      url: '#',
+      url: 'https://www.notion.so',
       icon: '📝'
     },
     {
@@ -40,7 +40,7 @@ const resources = {
       description: 'User testing and validation platform',
       category: 'Testing',
       type: 'Tool',
-      url: '#',
+      url: 'https://maze.co',
       icon: '🧪'
     }
   ],
@@ -50,7 +50,7 @@ const resources = {
       description: 'Create detailed user personas',
       category: 'Research',
       type: 'Template',
-      url: '#',
+      url: 'https://www.figma.com/community/file/1034736791859781337',
       icon: '👤'
     },
     {
@@ -58,7 +58,7 @@ const resources = {
       description: 'Map user journeys and touchpoints',
       category: 'Research',
       type: 'Template',
-      url: '#',
+      url: 'https://miro.com/miroverse/customer-journey-map/',
       icon: '🗺️'
     },
     {
@@ -66,7 +66,7 @@ const resources = {
       description: 'Low-fidelity wireframe components',
       category: 'Design',
       type: 'Template',
-      url: '#',
+      url: 'https://www.figma.com/community/file/809489514366084356',
       icon: '📐'
     },
     {
@@ -74,7 +74,7 @@ const resources = {
       description: 'Structure your usability testing sessions',
       category: 'Testing',
       type: 'Template',
-      url: '#',
+      url: 'https://www.notion.so/templates/usability-testing-script',
       icon: '🎬'
     }
   ],
@@ -84,7 +84,7 @@ const resources = {
       description: 'Complete guide to the design thinking methodology',
       category: 'Process',
       type: 'Article',
-      url: '#',
+      url: 'https://www.nngroup.com/articles/design-thinking/',
       icon: '📖'
     },
     {
@@ -92,7 +92,7 @@ const resources = {
       description: 'How to conduct effective user research',
       category: 'Research',
       type: 'Article',
-      url: '#',
+      url: 'https://www.nngroup.com/articles/which-ux-research-methods/',
       icon: '🔍'
     },
     {
@@ -100,7 +100,7 @@ const resources = {
       description: 'When and how to prototype effectively',
       category: 'Design',
       type: 'Article',
-      url: '#',
+      url: 'https://uxdesign.cc/prototyping-101-the-difference-between-low-fidelity-and-high-fidelity-prototypes-and-when-to-c43ebe1f7e6e',
       icon: '⚡'
     },
     {
@@ -108,7 +108,7 @@ const resources = {
       description: 'Plan and execute successful usability tests',
       category: 'Testing',
       type: 'Article',
-      url: '#',
+      url: 'https://www.nngroup.com/articles/usability-testing-101/',
       icon: '📊'
     }
   ],
@@ -118,7 +118,7 @@ const resources = {
       description: '45-minute workshop on design thinking basics',
       category: 'Education',
       type: 'Video',
-      url: '#',
+      url: 'https://www.youtube.com/watch?v=_r0VX-aU_T8',
       icon: '🎥'
     },
     {
@@ -126,7 +126,7 @@ const resources = {
       description: 'Master the art of user interviews',
       category: 'Research',
       type: 'Video',
-      url: '#',
+      url: 'https://www.youtube.com/watch?v=Qq3OiHQ-HCU',
       icon: '🎤'
     },
     {
@@ -134,7 +134,7 @@ const resources = {
       description: 'Create interactive prototypes in Figma',
       category: 'Design',
       type: 'Video',
-      url: '#',
+      url: 'https://www.youtube.com/watch?v=lTIeZ2ahEkQ',
       icon: '🛠️'
     }
   ]
@@ -152,28 +152,36 @@ const getIconForType = (type: string) => {
 
 export function ResourcesPanel({ framework, projectType, currentPhase }: ResourcesPanelProps) {
   const renderResourceCard = (resource: any) => (
-    <Card key={resource.name} className="p-4 hover:shadow-md transition-shadow">
-      <div className="flex items-start space-x-3">
-        <div className="text-2xl">{resource.icon}</div>
-        <div className="flex-1">
-          <div className="flex items-center space-x-2 mb-1">
-            <h4 className="text-sm font-medium">{resource.name}</h4>
-            <Badge variant="outline" className="text-xs">
-              {resource.type}
-            </Badge>
-          </div>
-          <p className="text-sm text-muted-foreground mb-3">{resource.description}</p>
-          <div className="flex items-center justify-between">
-            <Badge variant="secondary" className="text-xs">
-              {resource.category}
-            </Badge>
-            <Button size="sm" variant="ghost" className="h-auto p-1">
-              {getIconForType(resource.type)}
-            </Button>
+    <a 
+      key={resource.name} 
+      href={resource.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block"
+    >
+      <Card className="p-4 hover:shadow-md transition-shadow cursor-pointer hover:border-primary/50">
+        <div className="flex items-start space-x-3">
+          <div className="text-2xl">{resource.icon}</div>
+          <div className="flex-1">
+            <div className="flex items-center space-x-2 mb-1">
+              <h4 className="text-sm font-medium">{resource.name}</h4>
+              <Badge variant="outline" className="text-xs">
+                {resource.type}
+              </Badge>
+            </div>
+            <p className="text-sm text-muted-foreground mb-3">{resource.description}</p>
+            <div className="flex items-center justify-between">
+              <Badge variant="secondary" className="text-xs">
+                {resource.category}
+              </Badge>
+              <div className="text-primary p-1">
+                {getIconForType(resource.type)}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </a>
   );
 
   return (
